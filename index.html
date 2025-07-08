@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome To Optimus AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #f1f1f1;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    header h1 {
+      font-size: 3em;
+      color: #00c3ff;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-top: 10px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      animation: fadeUp 1.8s ease-in-out;
+    }
+    .section {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .section h2 {
+      color: #00ccff;
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+    .section ul {
+      padding-left: 20px;
+      text-align: left;
+    }
+    .section ul li::before {
+      content: "✔ ";
+      color: #00ff99;
+    }
+    .section ul li {
+      margin: 8px 0;
+    }
+    .button {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #888;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2em; }
+      .section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+  <h1>OPTIMUS AI</h1>
+  <p>AI, ANYWHERE, ANYTIME</p>
+</header>
+
+<!-- Activate Button -->
+<div style="text-align:center; margin-top: 20px;">
+  <button id="activateBtn" class="button">🚀 ACTIVATE OPTIMUS</button>
+</div>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_34ec13b5b8.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Optimus Voice Intro (MP3 version) -->
+<audio id="voiceInit" src="https://cdn.pixabay.com/download/audio/2022/03/21/audio_03a4e71ab4.mp3?filename=robot-intro-voice.mp3"></audio>
+
+<!-- Website Content (Hidden at first) -->
+<div id="aiContent" style="display:none;">
+  <div class="container">
+
+    <div class="section">
+      <h2>1. The Problem</h2>
+      <p>Many individuals with disabilities still face serious accessibility barriers in today’s tech-heavy world. Most modern AI solutions require constant internet access and aren't built to be inclusive.</p>
+    </div>
+
+    <div class="section">
+      <h2>2. Our Solution</h2>
+      <p>We’ve built an <strong>offline AI assistant</strong> that works like a smart desktop companion—fully responsive, private, and usable by all users without internet.</p>
+    </div>
+
+    <div class="section">
+      <h2>3. Use Cases</h2>
+      <ul>
+        <li>Voice control for the blind</li>
+        <li>Text-based control for the deaf</li>
+        <li>Hands-free use for people with mobility issues</li>
+        <li>Smart AI assistant for professionals and students</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>4. Future Roadmap</h2>
+      <ul>
+        <li>Voice and gesture upgrades</li>
+        <li>Smarter memory and recall</li>
+        <li>Braille display + eye-tracker support</li>
+        <li>Multi-language & localization</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>5. Conclusion</h2>
+      <p>This isn’t just a project. It’s a revolution in accessibility and AI. With Optimus AI, we’re giving independence and intelligence to everyone—<strong>offline.</strong></p>
+    </div>
+
+    <div class="section" style="text-align:center;">
+      <h2>6. Download</h2>
+      <a href="#" class="button">⬇️ Download Now (Coming Soon)</a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Optimus AI. All rights reserved.
+  </footer>
+</div>
+
+<!-- JavaScript for Activation + Voice + Chatbot -->
+<script>
+  function initLandbot() {
+    if (!window.myLandbot) {
+      const s = document.createElement('script');
+      s.type = "module";
+      s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+      s.onload = () => {
+        window.myLandbot = new Landbot.Livechat({
+          configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3017957-0QV3XC2XX36AP088/index.json',
+        });
+      };
+      document.body.appendChild(s);
+    }
+  }
+
+  document.getElementById("activateBtn").addEventListener("click", () => {
+    document.getElementById("aiContent").style.display = "block";
+    document.getElementById("voiceInit").play();
+    initLandbot();
+  });
+</script>
+
+</body>
+</html>
